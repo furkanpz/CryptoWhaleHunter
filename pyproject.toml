@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-whale-hunter"
+version = "1.0.0"
+description = "RSI and volume based Binance futures whale signal scanner with Telegram delivery."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "ccxt==4.5.43",
+  "numpy==2.0.1",
+  "pandas==2.2.2",
+  "pandas-ta==0.3.14b0",
+  "pyTelegramBotAPI==4.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff==0.6.9",
+]
+
+[tool.setuptools]
+packages = ["crypto_whale_hunter"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
